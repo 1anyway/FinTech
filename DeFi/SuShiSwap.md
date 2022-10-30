@@ -20,7 +20,7 @@
 SushBar使您可以放样Sushi，并获得xSushi作为回报，然后将其放到xSushi池中。
 
 ###Sushi的用途：###
-在SushiSwap Farms上进行流动性挖矿，用于质押来获得交易费提成奖励，用于治理功能的投票，添加为SushiSwap Exchange池上的LP
+在SushiSwap Farms上进行流动性挖矿，用于质押来获得交易费提成奖励，用于治理功能的投票，添加为SushiSwap Exchange池上的LP.
 ###投票治理：###
-投票目前在 snapshot.page 管理，基于 SushiPowah(一项投票指标，已锁定在SushiSwap Farms中的每一个SUSHI-ETH SLP token可获得一票)
+投票目前在 snapshot.page 管理，基于 SushiPowah(一项投票指标，已锁定在SushiSwap Farms中的每一个SUSHI-ETH SLP token可获得一票).
 
