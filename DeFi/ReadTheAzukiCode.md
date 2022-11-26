@@ -1,5 +1,0 @@
-# Read The Azuki Code									
-## What is Azuki
-Azuki is series of anime style nft that launched in OpenSea. Azuki is devoting itself to being one of the biggest decentralized brands that was built and owned by community. It will supply more then 10000 personal pictures for their members.Except with saling nfts, it  
-## The features of Azuki.
-## How it works
