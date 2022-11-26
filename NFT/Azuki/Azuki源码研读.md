@@ -7,6 +7,7 @@ Azuki的代码主要突出了两个特点，一个是实现了ERC721A，批量�
 Azuki主要的功能就是通过两个合约来实现的，就是ERC721A以及Azuki合约。
 ## ERC721A
 为了便于后面的理解，先贴出数据，下方是Azuki ERC721A合约的基本数据。
+```
 contract ERC721A is Context,ERC165,IERC721,IERC721Metadata,IERC721Enumerable {
   using Address for address;
   using Strings for uint256;
@@ -47,6 +48,7 @@ contract ERC721A is Context,ERC165,IERC721,IERC721Metadata,IERC721Enumerable {
 
   // Mapping from owner to operator approvals
   mapping(address => mapping(address => bool)) private _operatorApprovals;
+  ```
 
 在这里Azuki实现了它的重要功能，批量铸造。在铸造的时候，它并不记录所有铸造的tokenId的拥有者信息。任何一次批量铸造，它只记录该次铸造的第一个tokenId的拥有者信息。这样大大节省了gas费。
 function _safeMint(
