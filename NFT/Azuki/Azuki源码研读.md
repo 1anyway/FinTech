@@ -51,6 +51,7 @@ contract ERC721A is Context,ERC165,IERC721,IERC721Metadata,IERC721Enumerable {
   ```
 
 在这里Azuki实现了它的重要功能，批量铸造。在铸造的时候，它并不记录所有铸造的tokenId的拥有者信息。任何一次批量铸造，它只记录该次铸造的第一个tokenId的拥有者信息。这样大大节省了gas费。
+```
 function _safeMint(
     address to,
     uint256 quantity,
@@ -86,7 +87,9 @@ function _safeMint(
     currentIndex = updatedIndex;
     _afterTokenTransfers(address(0), to, startTokenId, quantity);
   }
+  ```
 通过下面的函数，通过实现往前追溯每一次mint的第一个tokenId的拥有者信息，可以返回每次铸造的每一个nft的tokenId的拥有者信息.
+```
 uint256 public nextOwnerToExplicitlySet = 0;
 function _setOwnersExplicit(uint256 quantity) internal {
     uint256 oldNextOwnerToSet = nextOwnerToExplicitlySet;
@@ -127,9 +130,11 @@ function _setOwnersExplicit(uint256 quantity) internal {
         return ownership;
       }
     }
+    ```
 
 ## Azuki
 下面 是Azuki合约的基本数据
+```
 contract Azuki is Ownable, ERC721A, ReentrancyGuard {
   uint256 public immutable maxPerAddressDuringMint;
   uint256 public immutable amountForDevs;
@@ -177,7 +182,9 @@ contract Azuki is Ownable, ERC721A, ReentrancyGuard {
     require(tx.origin == msg.sender, "The caller is another contract");
     _;
   }
+  ```
 下面是荷兰拍卖.
+```
   //拍卖最初设置最高价
   uint256 public constant AUCTION_START_PRICE = 1 ether;
   //拍卖结束地板价(最低价)
@@ -207,3 +214,4 @@ contract Azuki is Ownable, ERC721A, ReentrancyGuard {
       return AUCTION_START_PRICE - (steps * AUCTION_DROP_PER_STEP);
     }
   }
+  ```
